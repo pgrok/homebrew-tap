@@ -5,21 +5,21 @@
 class Pgrok < Formula
   desc "Poor man's ngrok"
   homepage "https://github.com/pgrok/pgrok"
-  version "1.1.4"
+  version "1.1.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.1.4/pgrok_1.1.4_darwin_amd64.tar.gz"
-      sha256 "ebb314466841d92d2cd85a3aa7cf32aa0a306951a4fa5864e9ad8e78d13ad068"
+      url "https://github.com/pgrok/pgrok/releases/download/v1.1.5/pgrok_1.1.5_darwin_amd64.tar.gz"
+      sha256 "65ec1a9071bf72a9413d8419088fdb2656ed563d70deeefcb3ec3b5237b5eb3b"
 
       def install
         bin.install "pgrok"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.1.4/pgrok_1.1.4_darwin_arm64.tar.gz"
-      sha256 "7b16cee793a1b0804974a3973f2b18098d1426e5c9f101ed574a6495e801acb9"
+      url "https://github.com/pgrok/pgrok/releases/download/v1.1.5/pgrok_1.1.5_darwin_arm64.tar.gz"
+      sha256 "b9c52b8c26202674b7e15401928e3724795e419c6323d83046372dda15c325c8"
 
       def install
         bin.install "pgrok"
@@ -28,17 +28,17 @@ class Pgrok < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.1.4/pgrok_1.1.4_linux_arm64.tar.gz"
-      sha256 "223ce9e6e9ca11e36c12e1965566388ca8a41eb9e0e599ce09843480d516b12a"
+    if Hardware::CPU.intel?
+      url "https://github.com/pgrok/pgrok/releases/download/v1.1.5/pgrok_1.1.5_linux_amd64.tar.gz"
+      sha256 "81d579766746afa6da9957a35342297471850204a153adc6c9d7d7c2fadf7d9a"
 
       def install
         bin.install "pgrok"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.1.4/pgrok_1.1.4_linux_amd64.tar.gz"
-      sha256 "5d5ea5b10351786e847a2b548c46d1830f1299c6390d7faddb954a78f7ab3563"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pgrok/pgrok/releases/download/v1.1.5/pgrok_1.1.5_linux_arm64.tar.gz"
+      sha256 "c8bf204d249a873cee3d36969b959f6f9bc8c1bca642c73be6c9e08ce77a6ae7"
 
       def install
         bin.install "pgrok"
