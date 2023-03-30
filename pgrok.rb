@@ -5,21 +5,21 @@
 class Pgrok < Formula
   desc "Poor man's ngrok"
   homepage "https://github.com/pgrok/pgrok"
-  version "1.3.0"
+  version "1.3.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.3.0/pgrok_1.3.0_darwin_amd64.tar.gz"
-      sha256 "9c86d0fbe739883dc37c81ff6a9e4fa7f06417c56fa52ad6ceb6ba7bc3e9f420"
+    if Hardware::CPU.arm?
+      url "https://github.com/pgrok/pgrok/releases/download/v1.3.1/pgrok_1.3.1_darwin_arm64.tar.gz"
+      sha256 "47fd3fa87768d26e5e71cd73d507d5faf8ec898ead1ec46487e54c8e0ed63838"
 
       def install
         bin.install "pgrok"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.3.0/pgrok_1.3.0_darwin_arm64.tar.gz"
-      sha256 "a8a01db928e625521789fb4187b72857049ea2542d1795afbe581ed6d77e6bc1"
+    if Hardware::CPU.intel?
+      url "https://github.com/pgrok/pgrok/releases/download/v1.3.1/pgrok_1.3.1_darwin_amd64.tar.gz"
+      sha256 "6fec9d5af24c2d845ab1e2146e38196ae9a8ae351442c6fb8a048373befd88d8"
 
       def install
         bin.install "pgrok"
@@ -28,17 +28,17 @@ class Pgrok < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.3.0/pgrok_1.3.0_linux_arm64.tar.gz"
-      sha256 "2eb58b8d72bebd6f4ca4d55ac855dae5dd7f29b825ad14aba8e4a96e19c5ae54"
+    if Hardware::CPU.intel?
+      url "https://github.com/pgrok/pgrok/releases/download/v1.3.1/pgrok_1.3.1_linux_amd64.tar.gz"
+      sha256 "3892f45ccf44d24fbe3b48933a876414e79e8e9a35f3924ef2dd1c63053f4656"
 
       def install
         bin.install "pgrok"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.3.0/pgrok_1.3.0_linux_amd64.tar.gz"
-      sha256 "fb10885853b0c5f6a0cb0bc0e5998c430d99ffcb9a5bda1fd03cefe9f3028f7a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pgrok/pgrok/releases/download/v1.3.1/pgrok_1.3.1_linux_arm64.tar.gz"
+      sha256 "ec0b2820e26edffdfbcb1e3e66a78dd1ba830fe37897a3a55bf4602a3e807cef"
 
       def install
         bin.install "pgrok"
