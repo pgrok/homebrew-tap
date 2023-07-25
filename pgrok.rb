@@ -5,21 +5,21 @@
 class Pgrok < Formula
   desc "Poor man's ngrok"
   homepage "https://github.com/pgrok/pgrok"
-  version "1.3.3"
+  version "1.3.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.3.3/pgrok_1.3.3_darwin_arm64.tar.gz"
-      sha256 "92ba52da6b5b623559117809305a93ee9ad6da07ea6352efec349e8d2760d307"
+      url "https://github.com/pgrok/pgrok/releases/download/v1.3.4/pgrok_1.3.4_darwin_arm64.tar.gz"
+      sha256 "f6c2a3ad0c251e7a5c109c6a60127c8e90506d8b71e78598c6a449c7f5c24659"
 
       def install
         bin.install "pgrok"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.3.3/pgrok_1.3.3_darwin_amd64.tar.gz"
-      sha256 "b1ce529f2a0ff157590b2607388d425ac9a0d076de7f58bb6ee7c14bdb657bd7"
+      url "https://github.com/pgrok/pgrok/releases/download/v1.3.4/pgrok_1.3.4_darwin_amd64.tar.gz"
+      sha256 "8c3d91b1b0f23fa6998de41c1f4c12eab9f14e39fc224d3055477fbdf0c8a7aa"
 
       def install
         bin.install "pgrok"
@@ -29,16 +29,16 @@ class Pgrok < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.3.3/pgrok_1.3.3_linux_amd64.tar.gz"
-      sha256 "1fe3604bdf69ff5a881a77258a10583a3fea5958aaab958ee4c22080635f64ba"
+      url "https://github.com/pgrok/pgrok/releases/download/v1.3.4/pgrok_1.3.4_linux_amd64.tar.gz"
+      sha256 "17db2b8cf5cb903ef0b04dc10dfa5f24fd9ce7ec75674219f322b15d706935eb"
 
       def install
         bin.install "pgrok"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.3.3/pgrok_1.3.3_linux_arm64.tar.gz"
-      sha256 "78db6e175aac64df82c8c51798da5dcedeb82559fa7cdcc489a718f87c385203"
+      url "https://github.com/pgrok/pgrok/releases/download/v1.3.4/pgrok_1.3.4_linux_arm64.tar.gz"
+      sha256 "cbab130e55af45dd1cc7b1644a799b92f7fa4b04f82b93e021e182399b8aefec"
 
       def install
         bin.install "pgrok"
