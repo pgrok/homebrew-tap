@@ -5,21 +5,21 @@
 class Pgrok < Formula
   desc "Poor man's ngrok"
   homepage "https://github.com/pgrok/pgrok"
-  version "1.4.1"
+  version "1.4.3-rc.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.4.1/pgrok_1.4.1_darwin_amd64.tar.gz"
-      sha256 "b886f3afc9b5d11dcf8741b00aff8c1f43f1007554ac58f949c7654df0566fed"
+      url "https://github.com/pgrok/pgrok/releases/download/v1.4.3-rc.4/pgrok_1.4.3-rc.4_darwin_amd64.tar.gz"
+      sha256 "3750570e7bcc4cafa5824d9fc6add7b5ff8086b3a2c2f094134c404c29473751"
 
       def install
         bin.install "pgrok"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.4.1/pgrok_1.4.1_darwin_arm64.tar.gz"
-      sha256 "5e2b755a50d007fc6f5807bae412ea3d35ca448bda47423e0f80a3692e3455a6"
+      url "https://github.com/pgrok/pgrok/releases/download/v1.4.3-rc.4/pgrok_1.4.3-rc.4_darwin_arm64.tar.gz"
+      sha256 "8df5c0ebeecba003ce16681076cad4b20a41e5be23fa8ea7ca8d1a2eed002ea3"
 
       def install
         bin.install "pgrok"
@@ -28,20 +28,24 @@ class Pgrok < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.4.1/pgrok_1.4.1_linux_arm64.tar.gz"
-      sha256 "9f6ee8fe7fea7bb68fed2ca7626a9277af8990ff8ee565c03ca3eecc083717df"
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/pgrok/pgrok/releases/download/v1.4.3-rc.4/pgrok_1.4.3-rc.4_linux_amd64.tar.gz"
+        sha256 "6e27ebe609e0b1e435e70ff7e9f12e78d34b674255b31c55a2a68afcb3624a90"
 
-      def install
-        bin.install "pgrok"
+        def install
+          bin.install "pgrok"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pgrok/pgrok/releases/download/v1.4.1/pgrok_1.4.1_linux_amd64.tar.gz"
-      sha256 "d789739fc4f5928ee0cb38a4520f9562562cffb2e3a48ab3cd6ba0c6e8b4cfb5"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/pgrok/pgrok/releases/download/v1.4.3-rc.4/pgrok_1.4.3-rc.4_linux_arm64.tar.gz"
+        sha256 "60ea5dab6d3382330c2c5bee4c47423d8273d1ec1ca21e06b6a3264f04950d2c"
 
-      def install
-        bin.install "pgrok"
+        def install
+          bin.install "pgrok"
+        end
       end
     end
   end
