@@ -11,7 +11,7 @@ class Pgrok < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/pgrok/pgrok/releases/download/v2026.01.08-1/pgrok_2026.01.08-1_darwin_amd64.tar.gz"
-      sha256 "aa43fca4a96fda13fe04c8978741d5ae812701f1790a83e91b4db83c353dd541"
+      sha256 "63c869b7b27948f7875297e09a16ecf8167e6706385bb83e36936473ab65faf1"
 
       def install
         bin.install "pgrok"
@@ -19,7 +19,7 @@ class Pgrok < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/pgrok/pgrok/releases/download/v2026.01.08-1/pgrok_2026.01.08-1_darwin_arm64.tar.gz"
-      sha256 "984b6f785fd719de3a0b47d0eeb4eb6f6fab339e30142d283630dfae50d4065b"
+      sha256 "5d9af8f0612c5307a2752616f56b85e6d95f8a7ff7b767b79795132857cf6d31"
 
       def install
         bin.install "pgrok"
@@ -30,14 +30,14 @@ class Pgrok < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/pgrok/pgrok/releases/download/v2026.01.08-1/pgrok_2026.01.08-1_linux_amd64.tar.gz"
-      sha256 "d511c4970f4e4a0ca8ffd34c3e2d9527c9a605b61962e3647e8395aff1392aa4"
+      sha256 "c4b3a5d99f92076d4bd1f412612a36f333c9b9a62056e82be26fa4ab5c8faf13"
       def install
         bin.install "pgrok"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/pgrok/pgrok/releases/download/v2026.01.08-1/pgrok_2026.01.08-1_linux_arm64.tar.gz"
-      sha256 "40155622ee02e0b3e3fb7a265fd1bda4b4e40f8c4fe54d944f8bc9a5bb859622"
+      sha256 "15eabdc65d0f128ff940118f15be4e2d85d532927018f9785d9b02c415b9f32a"
       def install
         bin.install "pgrok"
       end
